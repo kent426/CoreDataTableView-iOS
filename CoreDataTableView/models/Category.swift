@@ -39,7 +39,7 @@ class Category: NSManagedObject {
         //3: after call context.save();
     }
   
-/*
+
     //update date
     class func UpdateDate(CategoryName: String,context: NSManagedObjectContext) {
         
@@ -72,6 +72,6 @@ class Category: NSManagedObject {
         }
     }
  
- */
+
     
 }

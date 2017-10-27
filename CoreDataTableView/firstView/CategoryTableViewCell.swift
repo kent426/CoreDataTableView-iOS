@@ -19,7 +19,7 @@ class CategoryTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
    
-    /*
+
     
     //delete method
     @objc func deleteCell(_ sender:AnyObject?){
@@ -34,6 +34,6 @@ class CategoryTableViewCell: UITableViewCell {
         
         Category.UpdateDate(CategoryName: label.text!,context: context)
     }
- */
+
 
 }

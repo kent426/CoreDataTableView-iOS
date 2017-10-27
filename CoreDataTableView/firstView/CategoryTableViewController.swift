@@ -53,7 +53,7 @@ class CategoryTableViewController: UITableViewController , NSFetchedResultsContr
         tableView.reloadData()
         
         
-/*
+
         //set up the logn-press context menu
         
         //delete menuitem
@@ -68,7 +68,7 @@ class CategoryTableViewController: UITableViewController , NSFetchedResultsContr
         newItems.append(moveTopMenuItem)
         menuController.menuItems = newItems
  
- */
+
  
  
     }
@@ -145,7 +145,7 @@ extension CategoryTableViewController {
 }
 
 
-/*
+
  
 //for the itemMenu in table cell
 extension CategoryTableViewController {
@@ -167,6 +167,6 @@ extension CategoryTableViewController {
     }
 }
 
-*/
+
 
 
