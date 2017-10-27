@@ -15,10 +15,27 @@ class CategoryTableViewCell: UITableViewCell {
         // Initialization code
     }
 
+    @IBOutlet weak var label: UILabel!
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    
+    //delete method
+    @objc func deleteCell(_ sender:AnyObject?){
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        Category.Delete(CategoryName: label.text!,context: context)
+    }
+    
+    
+    //move to top method
+    @objc func moveTop(_ sender:AnyObject?){
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        Category.UpdateDate(CategoryName: label.text!,context: context)
     }
 
 }

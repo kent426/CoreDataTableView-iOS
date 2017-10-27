@@ -7,29 +7,42 @@
 //
 
 import UIKit
+import CoreData
 
 class AddViewController: UIViewController {
+    
+    //var container = (UIApplication.shared.delegate as! AppDelegate).persistentContainer
+    
+    var context: NSManagedObjectContext! = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBOutlet weak var textfield: UITextField!
+    
+    @IBAction func saveCategory(_ sender: UIBarButtonItem) {
+        
+        if let categoryinput = textfield.text{
+            if categoryinput.count != 0 {
+                if Category.CreateCategory(CategoryName: categoryinput, in: context ) != nil {
+                    do {
+                        try context.save()
+                        print( "save")
+                        self.navigationController?.popViewController(animated: true)
+                    } catch {
+                        print(error)
+                        fatalError("fail to add category.")
+                    }
+                }
+            }
+            
+        }
+        
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        textfield.layer.borderWidth = 1
     }
-    */
+
 
 }
