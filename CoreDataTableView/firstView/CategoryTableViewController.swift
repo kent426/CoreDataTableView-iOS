@@ -19,22 +19,16 @@ class CategoryTableViewController: UITableViewController , NSFetchedResultsContr
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
-
         //set up the NSFetchRequest for the tableView
         
         //create a request
         let request: NSFetchRequest<Category> = Category.fetchRequest()
-        
         
         request.sortDescriptors = [NSSortDescriptor(
             key: "creationDate",
             ascending: false
             )]
 
-        
         //set up the fetchedResultsController
         fetchedResultsController = NSFetchedResultsController<Category>(
             fetchRequest: request,
@@ -52,10 +46,8 @@ class CategoryTableViewController: UITableViewController , NSFetchedResultsContr
         }
         tableView.reloadData()
         
-        
 
-        //set up the logn-press context menu
-        
+        //set up the logn-press context menu   
         //delete menuitem
         let deleteMenuItem = UIMenuItem(title: "Delete", action: #selector(CategoryTableViewCell.deleteCell(_:)))
         
