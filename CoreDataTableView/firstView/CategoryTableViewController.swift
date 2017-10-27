@@ -11,7 +11,7 @@ import CoreData
 
 class CategoryTableViewController: UITableViewController , NSFetchedResultsControllerDelegate{
     
-    //var container = (UIApplication.shared.delegate as! AppDelegate).persistentContainer
+    
     var context : NSManagedObjectContext! = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     var fetchedResultsController: NSFetchedResultsController<Category>!
@@ -33,9 +33,7 @@ class CategoryTableViewController: UITableViewController , NSFetchedResultsContr
             key: "creationDate",
             ascending: false
             )]
-        
-        //you can add query, e.g.
-        //fetchRequest.predicate = NSPredicate.init(format: "busNumber = %@ AND stopCode = %@", argumentArray: [busnum!,stopcode!])
+
         
         //set up the fetchedResultsController
         fetchedResultsController = NSFetchedResultsController<Category>(

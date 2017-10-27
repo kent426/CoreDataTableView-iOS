@@ -10,10 +10,6 @@ import UIKit
 
 class CategoryTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
 
     @IBOutlet weak var label: UILabel!
     
@@ -22,7 +18,8 @@ class CategoryTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+   
+    /*
     
     //delete method
     @objc func deleteCell(_ sender:AnyObject?){
@@ -37,5 +34,6 @@ class CategoryTableViewCell: UITableViewCell {
         
         Category.UpdateDate(CategoryName: label.text!,context: context)
     }
+ */
 
 }

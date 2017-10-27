@@ -9,11 +9,16 @@
 import Foundation
 import CoreData
 
+//this is the coredata object class
 class Category: NSManagedObject {
     
+    
+    //create func
     class func CreateCategory(CategoryName: String, in context: NSManagedObjectContext) -> Category?
     {
         
+        //query to check if the db had the name already
+        //if so, return nil
         let fetchRequest: NSFetchRequest<Category> = Category.fetchRequest()
         fetchRequest.predicate = NSPredicate.init(format: "categoryName = %@", argumentArray: [CategoryName])
         let object = try! context.fetch(fetchRequest)
@@ -22,11 +27,16 @@ class Category: NSManagedObject {
             return nil
         }
         
+        //1: to get a new object(new row in db)
         let newCategory = Category(context: context)
+        
+        //2:set the attributes
         newCategory.categoryName = CategoryName
         newCategory.creationDate = Date()
         
         return newCategory
+        
+        //3: after call context.save();
     }
   
 /*
